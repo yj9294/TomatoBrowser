@@ -37,7 +37,6 @@ struct HomeContentView: View {
             if viewStore.isBrowser {
                 BrowserView(webView: viewStore.browserView)
             } else {
-                Image(.homecontentIcon).padding(.top, 19)
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())], spacing: 28) {
                         ForEach(viewStore.items, id: \.self) { item in
@@ -52,6 +51,7 @@ struct HomeContentView: View {
                         }
                     }.padding(.top, 38)
                 }
+                Image(.homecontentIcon).padding(.top, 19)
                 Spacer()
                 HStack{
                     GADNativeView(model: viewStore.ad)
